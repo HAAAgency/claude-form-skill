@@ -67,9 +67,10 @@ Now the user always knows the reason, and the reason is always the *real* one.
 |---|---|
 | Free-text country / phone | Searchable picker with flags + dial codes, sensible default |
 | Free-text with many common known values (bank, employer, city) | Autocomplete/typeahead: suggest from a curated list as they type, but keep any value they type (list is a convenience, never a constraint) |
-| Postal address | Autocomplete from an open-source geocoder (Photon/Nominatim on OpenStreetMap, no API key); picking a result fills street + city + region + postal at once (data-piping). Use Photon for type-ahead — Nominatim's usage policy forbids autocomplete — and proxy it server-side (CORS, rate limits, User-Agent, caching) |
+| Postal address | Autocomplete from an open-source geocoder (Photon/Nominatim on OpenStreetMap, no API key); picking a result fills street + city + region + postal **and country** at once (data-piping). Use Photon for type-ahead — Nominatim's usage policy forbids autocomplete — and proxy it server-side (CORS, rate limits, User-Agent, caching). Don't bias to one city's coordinates unless the form is single-country; return the ISO country code so downstream formatting/validation can be country-aware |
+| Postal / ZIP code | Auto-format to the country's canonical shape as the user types — don't make them add the space or the case. Canada `h9b2g9` → `H9B 2G9`; US `123456789` → `12345-6789`; UK `sw1a1aa` → `SW1A 1AA`; NL `1234ab` → `1234 AB`; else uppercase+trim. Drive the "incomplete" check off the country's expected length, not a hard-coded `< 5` |
 | Free-text date | Date picker; if only day+month matters, drop the year |
-| Free-text that's easy to malform (SIN, postal code, phone) | Constrain at the source: digits-only + `maxLength`, or an input mask, so an invalid value can't be entered |
+| Free-text that's easy to malform (national ID, postal code, phone) | Constrain at the source: digits-only + `maxLength`, or an input mask, so an invalid value can't be entered |
 | "Enter it again to confirm" | Show what was entered and let them edit |
 | One giant page | Progressive steps with a review screen at the end |
 
@@ -86,6 +87,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 - A filled-but-malformed field shown as "to complete" (or with no format hint) → the user can't tell what's actually wrong.
 - Red-flagging empty fields the user hasn't reached yet, or dumping every error in one blob at the top → anxiety and noise; put the error under the field it's about.
 - Skipping validation because a field is "optional" → an optional-but-typed bad email/phone passes the UI and blows up at submit.
+- Assuming one country → a hard-coded postal regex, a fixed length check, or a geocoder biased to one city silently rejects or mis-formats every foreign user. Format and validate by the selected country; default to the common case, don't hard-code it.
 
 ## Accessibility & craft (baseline — always)
 
