@@ -58,11 +58,12 @@ if (idRule && !idRule.test(draft.nationalId ?? "")) need.push("ID number"); // m
 if (!draft.address?.postalCode) need.push("Postal code");
 const valid = need.length === 0;
 
-<button disabled={!valid}>Next →</button>
-{!valid && <p className="hint">To complete: {need.join(", ")}</p>}
+<button aria-disabled={!valid} aria-describedby="need"
+        onClick={(e) => { if (!valid) e.preventDefault(); }}>Next →</button>
+<p id="need" role="status">{valid ? "" : `To complete: ${need.join(", ")}`}</p>
 ```
 
-The user always knows the reason — and the reason is always the *real* one.
+The user always knows the reason — and the reason is always the *real* one (and `aria-disabled` keeps that reason reachable by a screen reader — a bare `disabled` button drops out of the tab order).
 
 ## International by default
 
