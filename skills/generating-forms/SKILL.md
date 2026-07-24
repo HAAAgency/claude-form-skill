@@ -52,6 +52,8 @@ Now the user always knows the reason, and the reason is always the *real* one.
 
 **Two states, two treatments.** Don't use one channel for both. An *empty* required field gets gentle guidance (the grey "to complete" summary) — never shout red at a field the user hasn't reached yet. A *filled-but-invalid* field gets a clear **red error directly below that field**: unmissable and precise. Red means "you entered something wrong," never "you haven't done this yet."
 
+**Optional ≠ unvalidated.** An optional field left empty is fine — but the moment the user types in it, it must match its format. A bad email/phone/URL in an *optional* field still fails the server at submit. Validate on *presence*, not on required-ness: empty → allowed; non-empty → must be valid.
+
 ## Multi-step forms
 
 - One idea per step; always show progress.
@@ -79,6 +81,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 - A conditional field left visible after its answer stopped applying.
 - A filled-but-malformed field shown as "to complete" (or with no format hint) → the user can't tell what's actually wrong.
 - Red-flagging empty fields the user hasn't reached yet, or dumping every error in one blob at the top → anxiety and noise; put the error under the field it's about.
+- Skipping validation because a field is "optional" → an optional-but-typed bad email/phone passes the UI and blows up at submit.
 
 ## Accessibility & craft (baseline — always)
 
