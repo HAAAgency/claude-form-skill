@@ -94,14 +94,14 @@ Claude Code auto-loads the skill when a request matches its `description` — bu
 
 ## Author
 
-Built by **Rudy Abitbol**, founder of Human After All.
+Built by **Rudy Abitbol**, founder of [Human After All](https://humanafterall.ca) and 18+ years in B2B eCommerce. Based in Montreal, Quebec. More at [rudyabitbol.com](https://rudyabitbol.com).
 
 - ✍️ Substack — [b2becommerce.substack.com](https://b2becommerce.substack.com/)
 - 💼 LinkedIn — [in/rudyabitbol](https://www.linkedin.com/in/rudyabitbol/)
 
 ## About Human After All
 
-Human After All is the B2B commerce architecture firm — Shopify Plus Partner, Akeneo Certified — designing the systems, codifying the knowledge, and building the blocks that make B2B revenue grow online.
+[Human After All](https://humanafterall.ca) is the B2B commerce architecture firm — a **Shopify Plus Partner** and **Akeneo Foundation Certified** — based in Montreal, Quebec. It designs the systems, codifies the knowledge, and builds the blocks that make B2B revenue grow online. Contact via [LinkedIn](https://www.linkedin.com/in/rudyabitbol/).
 
 ## License
 
