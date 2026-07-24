@@ -50,6 +50,8 @@ Now the user always knows the reason, and the reason is always the *real* one.
 
 **Say *why*, and prevent it at the source.** If a field is present but malformed, the hint must explain — "SIN (9 digits)", not just "SIN", and never "to complete" on a field that already has a value. Better still, constrain the input so the bad value can't be typed in the first place: digits-only + `maxLength` for a SIN / postal code / phone, a picker for a date. Prevent early; validate as a backstop.
 
+**Two states, two treatments.** Don't use one channel for both. An *empty* required field gets gentle guidance (the grey "to complete" summary) — never shout red at a field the user hasn't reached yet. A *filled-but-invalid* field gets a clear **red error directly below that field**: unmissable and precise. Red means "you entered something wrong," never "you haven't done this yet."
+
 ## Multi-step forms
 
 - One idea per step; always show progress.
@@ -76,6 +78,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 - Wiping user input when they add/remove a row or flip a toggle.
 - A conditional field left visible after its answer stopped applying.
 - A filled-but-malformed field shown as "to complete" (or with no format hint) → the user can't tell what's actually wrong.
+- Red-flagging empty fields the user hasn't reached yet, or dumping every error in one blob at the top → anxiety and noise; put the error under the field it's about.
 
 ## Accessibility & craft (baseline — always)
 
