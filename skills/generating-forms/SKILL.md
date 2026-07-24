@@ -1,6 +1,6 @@
 ---
 name: generating-forms
-description: Use when building, generating, reviewing, or auditing any form — signup, login, checkout, intake, application, onboarding, survey, or multi-step wizard — or when deciding which fields are required vs optional, how to cut fields, how to prefill, or how to tell the user what they still have to fill in.
+description: Use when building a form or auditing a form — signup, login, checkout, intake, application, onboarding, survey, or multi-step wizard — or when deciding required vs optional, fixing a disabled submit button with no explanation, prefilling known values, removing irrelevant fields, or reconciling client/server validation drift.
 ---
 
 # Generating Forms
