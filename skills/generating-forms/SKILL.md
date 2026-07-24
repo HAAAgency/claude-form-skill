@@ -67,6 +67,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 |---|---|
 | Free-text country / phone | Searchable picker with flags + dial codes, sensible default |
 | Free-text with many common known values (bank, employer, city) | Autocomplete/typeahead: suggest from a curated list as they type, but keep any value they type (list is a convenience, never a constraint) |
+| Postal address | Autocomplete from an open-source geocoder (Photon/Nominatim on OpenStreetMap, no API key); picking a result fills street + city + region + postal at once (data-piping). Use Photon for type-ahead — Nominatim's usage policy forbids autocomplete — and proxy it server-side (CORS, rate limits, User-Agent, caching) |
 | Free-text date | Date picker; if only day+month matters, drop the year |
 | Free-text that's easy to malform (SIN, postal code, phone) | Constrain at the source: digits-only + `maxLength`, or an input mask, so an invalid value can't be entered |
 | "Enter it again to confirm" | Show what was entered and let them edit |
