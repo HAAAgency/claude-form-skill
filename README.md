@@ -48,7 +48,13 @@ Build the disabled-button hint from the **same predicate that gates the button**
 // Gate and hint share ONE source of truth — they can never drift apart.
 const need: string[] = [];
 if (!draft.companyName) need.push("Company name");
-if (!/^\d{3}\s?\d{3}\s?\d{3}$/.test(draft.nationalId ?? "")) need.push("ID number (9 digits)"); // mirrors the server regex
+// ID formats vary by country — key the rule to the selected country, never hardcode one.
+const ID_RULES: Record<string, RegExp> = {
+  CA: /^\d{3}\s?\d{3}\s?\d{3}$/, // SIN
+  US: /^\d{3}-?\d{2}-?\d{4}$/,   // SSN
+};
+const idRule = ID_RULES[draft.country];
+if (idRule && !idRule.test(draft.nationalId ?? "")) need.push("ID number"); // mirrors the server regex
 if (!draft.address?.postalCode) need.push("Postal code");
 const valid = need.length === 0;
 

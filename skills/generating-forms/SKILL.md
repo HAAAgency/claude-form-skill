@@ -38,7 +38,13 @@ Compute the missing-required list from the *same predicate* that gates the butto
 // Gate and hint are built from ONE source of truth, so they can never disagree.
 const need: string[] = [];
 if (!draft.companyName) need.push("Company name");
-if (!/^\d{3}\s?\d{3}\s?\d{3}$/.test(draft.sin ?? "")) need.push("SIN (9 digits)"); // mirrors the server regex
+// ID formats vary by country — key the rule to the selected country, never hardcode one.
+const ID_RULES: Record<string, RegExp> = {
+  CA: /^\d{3}\s?\d{3}\s?\d{3}$/, // SIN
+  US: /^\d{3}-?\d{2}-?\d{4}$/,   // SSN
+};
+const idRule = ID_RULES[draft.country];
+if (idRule && !idRule.test(draft.nationalId ?? "")) need.push("ID number"); // mirrors the server regex
 if (!draft.address?.postalCode) need.push("Postal code");
 const valid = need.length === 0;
 
