@@ -68,7 +68,7 @@ The user always knows the reason — and the reason is always the *real* one.
 
 Forms fail silently for foreign users when a developer hard-codes their own country. The skill treats internationalization as a correctness issue, not a nice-to-have:
 
-- **Address autocomplete** uses an open-source geocoder ([Photon](https://photon.komoot.io) on OpenStreetMap data — no API key, no city bias) and returns the **ISO country code**, so everything downstream can be country-aware. Picking a result fills street + city + region + postal + country at once.
+- **Address autocomplete** uses an open-source geocoder ([Photon](https://photon.komoot.io) on OpenStreetMap data — no API key, no city bias) and returns the **ISO country code**, so everything downstream can be country-aware. Picking a result fills street + city + region + postal + country at once. Note that Photon's public endpoint is offered on a fair-use basis and carries no SLA, so it can rate-limit or go down without warning. Production deployments should self-host Photon (or another OSM geocoder) and fall back gracefully to plain manual entry when the service is unreachable.
 - **Postal / ZIP codes auto-format** to each country's canonical shape as the user types — Canada `h9b2g9` → `H9B 2G9`, US `123456789` → `12345-6789`, UK `sw1a1aa` → `SW1A 1AA`, NL `1234ab` → `1234 AB` — and the "incomplete" check keys off the country's expected length, never a hard-coded `< 5`.
 - **Bank / institution pickers** suggest from a world list, not one country's banks — while still accepting any typed value.
 
