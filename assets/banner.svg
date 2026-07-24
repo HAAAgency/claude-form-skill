@@ -1,51 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="generating-forms — a Claude Code skill by Human After All">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="generating-forms — a Claude Code skill for forms people actually understand. Human After All.">
+  <title>generating-forms — a Claude Code skill by Human After All</title>
   <defs>
     <filter id="grain">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0"></feColorMatrix>
     </filter>
-    <style>
-      .serif { font-family: "Libre Caslon Condensed", "Canela", Georgia, serif; }
-      .sans  { font-family: "Public Sans", -apple-system, "Segoe UI", Roboto, sans-serif; }
-      .mono  { font-family: "IBM Plex Mono", "SF Mono", Menlo, monospace; }
-    </style>
   </defs>
 
-  <!-- Background: near-black + subtle film grain -->
-  <rect width="1280" height="640" fill="#020202"/>
-  <rect width="1280" height="640" filter="url(#grain)"/>
-  <!-- Signature yellow left bar -->
-  <rect x="0" y="0" width="10" height="640" fill="#FED800"/>
 
-  <!-- Eyebrow (mono, uppercase, yellow) -->
-  <text x="96" y="150" class="mono" font-size="15" letter-spacing="4" fill="#FED800">CLAUDE CODE SKILL · GENERATING-FORMS</text>
+  <rect width="1280" height="640" fill="#020202"></rect>
+  <rect width="1280" height="640" filter="url(#grain)"></rect>
 
-  <!-- Hero (serif, off-white) -->
-  <text x="94" y="270" class="serif" font-size="92" fill="#F2F2F2">Forms people</text>
-  <text x="94" y="372" class="serif" font-size="92" fill="#F2F2F2">actually <tspan fill="#FED800">understand</tspan>.</text>
+  <rect x="0" y="0" width="10" height="640" fill="#FED800"></rect>
 
-  <!-- Subhead (sans, muted) -->
-  <text x="96" y="452" class="sans" font-size="25" fill="#B2B2B2">Required vs optional, on the label.  No re-entry.  No irrelevant fields.  Fail early.</text>
 
-  <!-- Divider -->
-  <rect x="96" y="500" width="1088" height="1" fill="#2a2a2a"/>
+  <text x="96" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, &#39;Liberation Mono&#39;, monospace" font-size="15" font-weight="500" letter-spacing="4" fill="#FED800">CLAUDE CODE SKILL · GENERATING-FORMS</text>
 
-  <!-- Footer (mono, dim) -->
-  <text x="96" y="556" class="mono" font-size="14" letter-spacing="3" fill="#969696">HUMAN AFTER ALL</text>
-  <text x="96" y="580" class="sans" font-size="15" fill="#727272">The B2B commerce architecture firm — designing the systems that make revenue grow online.</text>
 
-  <!-- Right-side motif: a labelled form field with a required mark + a yellow hint -->
-  <g transform="translate(902,150)" opacity="0.96">
-    <text x="0" y="0" class="mono" font-size="12" letter-spacing="1" fill="#969696">EMAIL <tspan fill="#ff5a5a">*</tspan></text>
-    <rect x="0" y="14" width="286" height="46" rx="8" fill="#181818" stroke="#363636"/>
-    <text x="16" y="43" class="sans" font-size="16" fill="#F2F2F2">rudy@humanafterall.ca</text>
-    <text x="0" y="92" class="sans" font-size="13" fill="#FED800">To continue: fill the required fields</text>
+  <text x="94" y="266" font-family="&#39;Libre Caslon Condensed&#39;, Canela, Georgia, &#39;Times New Roman&#39;, serif" font-size="84" fill="#F2F2F2">Forms people</text>
+  <text x="94" y="360" font-family="&#39;Libre Caslon Condensed&#39;, Canela, Georgia, &#39;Times New Roman&#39;, serif" font-size="84" fill="#F2F2F2">actually <tspan fill="#FED800">understand</tspan>.</text>
 
-    <text x="0" y="150" class="mono" font-size="12" letter-spacing="1" fill="#969696">PHONE <tspan fill="#969696">(optional)</tspan></text>
-    <rect x="0" y="164" width="286" height="46" rx="8" fill="#181818" stroke="#2a2a2a"/>
-    <text x="16" y="193" class="sans" font-size="16" fill="#B2B2B2">🇨🇦 +1  514 …</text>
 
-    <rect x="0" y="248" width="140" height="46" rx="23" fill="#FED800"/>
-    <text x="70" y="277" class="sans" font-size="15" font-weight="700" fill="#020202" text-anchor="middle">Next →</text>
+  <text x="96" y="446" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="21" fill="#B2B2B2">Required vs optional, on the label.  No re-entry.  No irrelevant fields.  Fail early.</text>
+
+
+  <rect x="96" y="500" width="1088" height="1" fill="#2a2a2a"></rect>
+
+
+  <text x="96" y="548" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, &#39;Liberation Mono&#39;, monospace" font-size="14" letter-spacing="3" fill="#969696">HUMAN AFTER ALL</text>
+  <text x="1184" y="548" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, &#39;Liberation Mono&#39;, monospace" font-size="13" letter-spacing="1" fill="#FED800">humanafterall.ca</text>
+  <text x="96" y="578" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#8a8a8a">Human After All is the B2B commerce architecture firm — Shopify Plus Partner, Akeneo Certified —</text>
+  <text x="96" y="598" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#8a8a8a">designing the systems, codifying the knowledge, and building the blocks that make B2B revenue grow online.</text>
+
+
+  <g transform="translate(902,150)">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, &#39;Liberation Mono&#39;, monospace" font-size="12" letter-spacing="1" fill="#969696">EMAIL <tspan fill="#ff5a5a">*</tspan></text>
+    <rect x="0" y="14" width="286" height="46" rx="8" fill="#181818" stroke="#363636"></rect>
+    <text x="16" y="43" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#F2F2F2">buyer@acme-supply.com</text>
+    <text x="0" y="92" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#FED800">To continue: fill the required fields</text>
+
+    <text x="0" y="150" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, &#39;Liberation Mono&#39;, monospace" font-size="12" letter-spacing="1" fill="#969696">PHONE <tspan fill="#969696">(optional)</tspan></text>
+    <rect x="0" y="164" width="286" height="46" rx="8" fill="#181818" stroke="#2a2a2a"></rect>
+    <text x="16" y="193" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#B2B2B2">+1  514 …</text>
+
+    <rect x="0" y="248" width="140" height="46" rx="23" fill="#FED800"></rect>
+    <text x="70" y="277" font-family="-apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#020202" text-anchor="middle">Next →</text>
   </g>
 </svg>
