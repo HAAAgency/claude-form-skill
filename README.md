@@ -48,13 +48,6 @@ cp -r skills/generating-forms ~/.claude/skills/
 
 Claude Code auto-loads the skill when a request matches its `description` (building/auditing a form, deciding required vs optional, a disabled button with no explanation, etc.), or invoke it explicitly with `/generating-forms`.
 
-## Related / complementary
-
-- [tommyjepsen/awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills) — broad UX frameworks (Nielsen heuristics, Rams, journey maps).
-- [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — visual design systems (styles, palettes, typography).
-
-This skill fills the gap those leave: **form interaction & data flow**, not aesthetics.
-
 ## License
 
 MIT
