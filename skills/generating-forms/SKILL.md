@@ -20,7 +20,7 @@ A good form answers three questions for the user at every moment: **What do I fi
 
 ## The five rules
 
-1. **Required vs optional must be unmistakable — on the label itself — and never leave a disabled button unexplained.** Put a marker on *every* field's label up front: a red `*` for required, `(optional)` for optional, so the user knows *before* they try, not only after the button greys out. And when submit/next is disabled, also show *exactly which required fields are still missing*, live, right by the button. A disabled button with no reason is the #1 form defect.
+1. **Required vs optional must be unmistakable — on a persistent label — and never leave a disabled button unexplained.** Give *every* field a persistent visible label *above* it (never a placeholder used as the label — it vanishes the instant the user types and takes the required/optional cue with it). Mark each label up front: a red `*` for required, `(optional)` for optional, so the user knows *before* they try. Label every field the same way across the whole form (homogeneity). And when submit/next is disabled, also show *exactly which required fields are still missing*, live, by the button. A disabled button with no reason is the #1 form defect.
 
 2. **Never ask for the same information twice — pipe it.** If a value was already collected or is derivable, prefill it and let the user confirm or edit. (Sole shareholder → prefill as the sole director; "employees in province" defaults to total; mailing address seeds the province from the head office.)
 
@@ -76,6 +76,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 
 - Disabled Next/Submit with no explanation → user is stuck and blames you.
 - No required/optional marker on labels → the user has to guess which fields they can skip.
+- Placeholder used AS the label → it disappears the moment the user types; they forget what the field was and lose the required/optional cue. Some fields labeled, others placeholder-only → inconsistent, confusing.
 - Everything marked required (or nothing) → the user can't prioritize.
 - Client validation looser than the server → a generic error at the very end.
 - Re-asking a name/address already entered → piping was skipped.
