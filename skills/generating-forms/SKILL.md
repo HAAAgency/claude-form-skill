@@ -48,6 +48,8 @@ const valid = need.length === 0;
 
 Now the user always knows the reason, and the reason is always the *real* one.
 
+**Say *why*, and prevent it at the source.** If a field is present but malformed, the hint must explain — "SIN (9 digits)", not just "SIN", and never "to complete" on a field that already has a value. Better still, constrain the input so the bad value can't be typed in the first place: digits-only + `maxLength` for a SIN / postal code / phone, a picker for a date. Prevent early; validate as a backstop.
+
 ## Multi-step forms
 
 - One idea per step; always show progress.
@@ -61,6 +63,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 |---|---|
 | Free-text country / phone | Searchable picker with flags + dial codes, sensible default |
 | Free-text date | Date picker; if only day+month matters, drop the year |
+| Free-text that's easy to malform (SIN, postal code, phone) | Constrain at the source: digits-only + `maxLength`, or an input mask, so an invalid value can't be entered |
 | "Enter it again to confirm" | Show what was entered and let them edit |
 | One giant page | Progressive steps with a review screen at the end |
 
@@ -72,6 +75,7 @@ Now the user always knows the reason, and the reason is always the *real* one.
 - Re-asking a name/address already entered → piping was skipped.
 - Wiping user input when they add/remove a row or flip a toggle.
 - A conditional field left visible after its answer stopped applying.
+- A filled-but-malformed field shown as "to complete" (or with no format hint) → the user can't tell what's actually wrong.
 
 ## Accessibility & craft (baseline — always)
 
