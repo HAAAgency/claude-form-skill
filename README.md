@@ -48,6 +48,10 @@ cp -r skills/generating-forms ~/.claude/skills/
 
 Claude Code auto-loads the skill when a request matches its `description` (building/auditing a form, deciding required vs optional, a disabled button with no explanation, etc.), or invoke it explicitly with `/generating-forms`.
 
+## About Human After All
+
+Human After All is the B2B commerce architecture firm — Shopify Plus Partner, Akeneo Certified — designing the systems, codifying the knowledge, and building the blocks that make B2B revenue grow online.
+
 ## License
 
 MIT
