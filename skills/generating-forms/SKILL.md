@@ -77,6 +77,16 @@ const current = steps.findIndex((s) => s.id === currentId);  // track by id, nev
 
 **Optional ≠ unvalidated.** An optional field left empty is fine — but the moment the user types in it, it must match its format. A bad email/phone/URL in an *optional* field still fails the server at submit. Validate on *presence*, not on required-ness: empty → allowed; non-empty → must be valid.
 
+**A third state: valid, but probably not what they meant.** `dana@gmail.co` passes every format check, `.co` is a real TLD, and the address is very likely a typo that silently loses the reply. This is neither "fine" nor "an error" — so give it a third treatment: a quiet **suggestion** under the field, never red, never blocking.
+
+- **Offer, don't correct.** Render it as a button — "Use gmail.com" — that rewrites *only the domain*, never the part they typed before the `@`. Auto-correcting a valid address is how you mangle the one user who really does own `gmail.co`.
+- **Keep it offline.** Compare against a small static list of common domains with an edit-distance check. No MX lookup, no domain-existence API: a spelling hint must not acquire a network dependency that can be down, and "is this domain real?" is a different question you probably shouldn't be asking at all.
+- **Use Damerau/OSA distance, not plain Levenshtein.** `gmial → gmail` is one transposition but *two* substitutions, so at a threshold of one edit plain Levenshtein misses the single most common email typo there is.
+- **Tune for precision, not recall — the two errors don't cost the same.** A missed typo costs a bounced email. A false suggestion tells someone their own address is wrong, which is worse and much more memorable. Keep the threshold at one edit, and put the legitimate lookalikes (`yahoo.co.uk`, `hotmail.fr`) *in* the known list so they can never be "corrected".
+- **On blur, not per keystroke** — every address is misspelled halfway through being typed — and clear the suggestion the moment they edit again.
+
+Test the **silence** as hard as the hits: assert that `yahoo.co.uk` and a plain company domain produce no suggestion at all. That is the assertion that breaks when someone widens the threshold to "catch more".
+
 ## The submit boundary
 
 Rules 1–4 get the user *to* a clean submit. Two things still fail *at* it.
